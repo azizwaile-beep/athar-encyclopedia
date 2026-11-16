@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f3eb">
+<title>أثَر | لكل كلمة حكاية</title>
+<style>
+:root{--ink:#172b45;--blue:#244f78;--muted:#65758a;--paper:#f6f3eb;--white:#fff;--line:#e5e0d5;--gold:#b58a48}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.8}
+header{padding:18px 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#fbfaf6}
+.brand{font-size:27px;font-weight:800;color:var(--blue);letter-spacing:1px}.brand small{display:block;font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:500}
+nav a{color:var(--muted);text-decoration:none;margin:0 10px;font-size:14px}
+main{max-width:1080px;margin:auto;padding:55px 22px}
+.hero{text-align:center;padding:42px 15px 55px}.eyebrow{color:var(--gold);font-size:13px;letter-spacing:1px}
+h1{font-size:clamp(32px,6vw,54px);line-height:1.35;margin:12px 0;color:var(--ink)}
+.hero p{color:var(--muted);max-width:650px;margin:0 auto 26px}
+.search{max-width:680px;margin:auto;display:flex;background:white;border:1px solid var(--line);border-radius:14px;padding:7px;box-shadow:0 8px 25px #172b450d}
+.search input{flex:1;min-width:0;border:0;outline:0;padding:12px 14px;font:inherit;background:transparent}
+.search button{border:0;border-radius:10px;background:var(--blue);color:white;padding:10px 22px;font:inherit;cursor:pointer}
+.note{font-size:12px;color:var(--muted);margin-top:10px}
+.section-title{display:flex;align-items:end;justify-content:space-between;margin:24px 0 15px}.section-title h2{margin:0;font-size:23px}.section-title span{font-size:12px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:15px;padding:20px;min-height:155px}
+.word{font-size:25px;font-weight:700;color:var(--blue)}.lang{font-size:11px;color:var(--gold);margin-right:8px}
+.card p{font-size:13px;color:var(--muted);margin:8px 0 0}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px;margin-top:34px}
+.feature{padding:20px 4px;border-top:2px solid var(--gold)}.feature h3{margin:0 0 6px;font-size:17px}.feature p{margin:0;color:var(--muted);font-size:13px}
+footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:var(--muted);font-size:12px}
+@media(max-width:600px){header{padding:14px 5%;}nav{display:none}main{padding:28px 16px}.hero{padding:25px 4px 40px}.search button{padding:8px 13px}}
+</style>
+</head>
+<body>
+<header><div class="brand">أثَر<small>ATHAR · WORD ORIGINS</small></div><nav><a href="#search">ابحث عن كلمة</a><a href="#words">كلمات مختارة</a><a href="#about">عن الموسوعة</a></nav></header>
+<main>
+<section class="hero" id="search">
+<div class="eyebrow">موسوعة أصول الكلمات ورحلتها بين اللغات</div>
+<h1>وراء كل كلمة حكاية</h1>
+<p>اكتشف أصل الكلمات، وجذورها، وتحول معانيها عبر الزمن. رحلة لغوية تبحث في الروايات وتعود إلى المصادر.</p>
+<div class="search"><input id="query" type="search" placeholder="اكتب كلمة تريد اكتشاف أصلها..." aria-label="ابحث عن كلمة"><button onclick="searchWord()">اكتشف</button></div>
+<div class="note" id="message">اكتب كلمة للبدء — البحث في هذه النسخة تجريبي.</div>
+</section>
+<section id="words"><div class="section-title"><h2>نافذة على الكلمات</h2><span>نماذج تعريفية تجريبية</span></div>
+<div class="cards">
+<article class="card"><div class="word">طماطم <span class="lang">العربية</span></div><p>كلمة ذات رحلة لغوية طويلة ارتبطت بأسماء متعددة في لغات العالم.</p></article>
+<article class="card"><div class="word">سكر <span class="lang">العربية</span></div><p>لفظة انتقلت بين لغات وثقافات، وتكشف حكايتها أثر التجارة والتبادل.</p></article>
+<article class="card"><div class="word">كتاب <span class="lang">العربية</span></div><p>من الجذر ك ت ب، وترتبط دلالتها بالكتابة والجمع والتدوين.</p></article>
+<article class="card"><div class="word">قنديل <span class="lang">العربية</span></div><p>مثال على الكلمات التي تستحق تتبع أشكالها واستعمالاتها عبر العصور.</p></article>
+</div></section>
+<section class="features" id="about">
+<div class="feature"><h3>أصل الكلمة</h3><p>تتبّع الجذور والاشتقاقات واللغات التي ظهرت فيها الكلمة.</p></div>
+<div class="feature"><h3>رحلة عبر الزمن</h3><p>راقب تغير اللفظ والمعنى وانتقال الكلمات بين المجتمعات.</p></div>
+<div class="feature"><h3>حقيقة أم شائعة؟</h3><p>ميّز بين الروايات الشائعة وما تسنده الأدلة والمراجع.</p></div>
+<div class="feature"><h3>المصادر والمراجع</h3><p>اجعل التوثيق أساس كل حكاية لغوية تُنشر في الموسوعة.</p></div>
+</section>
+</main>
+<footer>أثَر — لكل كلمة حكاية، ولكل حكاية أثر.</footer>
+<script>
+function searchWord(){const q=document.getElementById('query').value.trim();const m=document.getElementById('message');m.textContent=q?`بحثك عن «${q}» سيتاح عند ربط الموسوعة بقاعدة بيانات موثقة.`:'اكتب كلمة أولاً.'}
+document.getElementById('query').addEventListener('keydown',e=>{if(e.key==='Enter')searchWord()});
+</script>
+</body></html>
