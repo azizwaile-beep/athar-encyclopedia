@@ -32,7 +32,7 @@ h1{font-size:clamp(32px,6vw,52px);line-height:1.35;margin:10px 0;color:var(--ink
 .result-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .word{font-size:25px;font-weight:800;color:var(--blue)}
 .lang{font-size:11px;color:var(--gold);margin-right:7px;font-weight:600}
-.pill{display:inline-block;background:#f2eee4;color:#806438;border-radius:30px;padding:3px 10px;font-size:11px}
+.pill{display:inline-block;background:#f2eee4;color:#806438;border-radius:30px;padding:3px 10px;font-size:11px;margin:2px}
 .result p{margin:9px 0;color:#46576b}
 .path{background:#f7f8fa;border:1px solid #e8edf2;border-radius:10px;padding:10px 12px;margin:12px 0;color:#244f78;font-size:14px;direction:ltr;text-align:center;overflow-wrap:anywhere}
 .meta{font-size:12px;color:var(--muted)}
@@ -61,38 +61,35 @@ footer{text-align:center;border-top:1px solid var(--line);padding:20px;color:var
     <input id="query" type="search" placeholder="مثال: سكر، كتاب، sugar، قنديل..." aria-label="ابحث عن كلمة" autocomplete="off">
     <button type="submit">اكتشف</button>
   </form>
-  <div class="note" id="message" aria-live="polite">جرّب البحث عن: كتاب · سكر · قنديل · طماطم</div>
+  <div class="note" id="message" aria-live="polite">جرّب البحث عن: كتاب · سكر · قنديل · طماطم · الجبر · خوارزمية</div>
 </section>
-
 <section id="words">
-  <div class="section-title"><h2>نتائج البحث</h2><span id="count">4 مداخل أولية</span></div>
+  <div class="section-title"><h2>نتائج البحث</h2><span id="count">10 مداخل أولية موثقة بدرجات متفاوتة</span></div>
   <div class="results" id="results"></div>
 </section>
-
 <section class="features" id="about">
   <div class="feature"><h3>أصل الكلمة</h3><p>نميّز بين الجذر والاقتراض اللغوي، ولا ننسب أصلًا بلا دليل.</p></div>
   <div class="feature"><h3>رحلة عبر الزمن</h3><p>نتتبع انتقال اللفظ وتحوّل معناه بين اللغات.</p></div>
   <div class="feature"><h3>حقيقة أم شائعة؟</h3><p>نفصل بين المعلومة المسندة والرواية التي تحتاج إلى تحقق.</p></div>
-  <div class="feature"><h3>المصادر والمراجع</h3><p>كل مدخل أولي يذكر مرجعًا يمكن للقارئ الرجوع إليه.</p></div>
+  <div class="feature"><h3>المصادر والمراجع</h3><p>كل مدخل يذكر مرجعًا يمكن للقارئ الرجوع إليه، مع توضيح حدود الدليل.</p></div>
 </section>
 </main>
 <footer>أثَر — لكل كلمة حكاية، ولكل حكاية أثر.</footer>
-
 <script>
 const entries = [
   {
     title:"كتاب", language:"العربية", tags:["جذر عربي","اشتقاق"],
     aliases:["كتاب","الكتاب","كتب","كتابة","كاتب","مكتوب","مكتبة","ك ت ب","kitab","kitaab","kitāb"],
-    summary:"كلمة عربية مشتقة من الجذر الثلاثي ك ت ب. يدور هذا الجذر حول الكتابة والجمع والتدوين، ومنه: كَتَبَ، كتابة، كاتب، مكتوب ومكتبة.",
+    summary:"كلمة عربية مشتقة من الجذر الثلاثي ك ت ب. يدور هذا الجذر حول الكتابة والتدوين، ومنه: كَتَبَ، كتابة، كاتب، مكتوب ومكتبة.",
     path:"ك ت ب ← كَتَبَ ← كِتاب",
-    detail:"هذا المدخل يشرح الاشتقاق داخل العربية، ولا يدّعي أن كلمة «كتاب» انتقلت من لغة أجنبية. ينبغي الرجوع إلى المعاجم العربية لتوثيق كل استعمال تاريخي على حدة.",
-    source:"Lane’s Arabic-English Lexicon — معجم عربي إنجليزي",
+    detail:"هذا المدخل يشرح الاشتقاق داخل العربية، ولا يدّعي أن كلمة «كتاب» انتقلت من لغة أجنبية. يلزم الرجوع إلى موضع مادة (كتب) في المعجم للتحقق التفصيلي.",
+    source:"Lane’s Arabic-English Lexicon",
     url:"https://lanelexicon.com/wp-content/uploads/2019/03/an_arabic_english_lexicon_part_1.pdf",
     sourceNote:"مرجع معجمي تراثي؛ يلزم تحديد موضع مادة (كتب) عند توسيع التوثيق."
   },
   {
     title:"سكر · Sugar", language:"العربية والإنجليزية", tags:["اقتراض لغوي","رحلة بين اللغات"],
-    aliases:["سكر","السُّكّر","sugar","sucre","azucar","azúcar","zucker","sakhar","shakar","sharkara","śarkarā","سكر"],
+    aliases:["سكر","السُّكّر","sugar","sucre","azucar","azúcar","zucker","sakhar","shakar","sharkara","śarkarā"],
     summary:"تذكر مراجع اشتقاق الإنجليزية أن sugar وصلت إلى الإنجليزية عبر الفرنسية القديمة، من اللاتينية الوسيطة، ثم العربية سُكّر، والفارسية شَكَر، وصولًا إلى السنسكريتية śarkarā.",
     path:"śarkarā (سنسكريتية) ← shakar (فارسية) ← sukkar (عربية) ← succarum (لاتينية وسيطة) ← sucre (فرنسية قديمة) ← sugar",
     detail:"هذا المسار يشرح تاريخ اللفظة الإنجليزية كما يورده المرجع. لا ينبغي اختزاله في القول إن كل صيغ الكلمة في اللغات الحديثة انتقلت بالطريق نفسه.",
@@ -102,26 +99,107 @@ const entries = [
   },
   {
     title:"قنديل", language:"العربية", tags:["اقتراض لغوي محتمل","السريانية واليونانية"],
-    aliases:["قنديل","قناديل","qandil","qandēlā","kandēlē","kandela","قندلة"],
+    aliases:["قنديل","قناديل","qandil","qandēlā","kandēlē","kandela"],
     summary:"تورد بعض المراجع الاشتقاقية أن العربية «قنديل» دخلت عبر السريانية qandēlā، المرتبطة باليونانية القديمة kandḗlē، بمعنى المصباح أو أداة الإضاءة.",
-    path:"κανδήλη (يونانية قديمة) ← qandēlā (سريانية) ← قنديل (عربية)",
-    detail:"نضع هذا المسار بصيغة منسوبة إلى المرجع، لا كحقيقة نهائية مغلقة. عند تطوير الموسوعة سنبحث عن شواهد معجمية تاريخية مستقلة قبل اعتماد الحكم النهائي.",
-    source:"Wiktionary — قنديل (مدخل اشتقاقي)",
+    path:"kandḗlē (يونانية قديمة) ← qandēlā (سريانية) ← قنديل (عربية)",
+    detail:"نضع هذا المسار بصيغة منسوبة إلى المرجع، لا كحقيقة نهائية مغلقة. نحتاج إلى شواهد معجمية تاريخية مستقلة قبل اعتماد الحكم النهائي.",
+    source:"Wiktionary — قنديل",
     url:"https://en.wiktionary.org/wiki/قنديل",
     sourceNote:"مصدر استكشافي ثانوي؛ يحتاج إلى تدعيم بمعجم تاريخي متخصص."
   },
   {
     title:"Tomato · طماطم", language:"الناواتل والإسبانية والإنجليزية", tags:["تاريخ الاسم","تنبيه اشتقاقي"],
-    aliases:["طماطم","طماطم","tomato","tomate","tomatl","jitomate","tomatoes"],
+    aliases:["طماطم","tomato","tomate","tomatl","jitomate","tomatoes"],
     summary:"تذكر Encyclopaedia Britannica أن الاسم الإنجليزي tomato مشتق من كلمة tomatl في لغة الناواتل، وأن الإسبان نقلوا النبات إلى أوروبا في القرن السادس عشر.",
     path:"tomatl (ناواتل) ← tomate (إسبانية) ← tomato (إنجليزية)",
-    detail:"تنبيه مهم: هذا يثبت مسار الاسم الإنجليزي كما تذكره الموسوعة، ولا يثبت وحده الطريق التاريخي الذي دخلت به الصيغة العربية «طماطم». سنبحث عن أصل الصيغة العربية بصورة مستقلة.",
+    detail:"هذا يثبت مسار الاسم الإنجليزي كما تذكره الموسوعة، ولا يثبت وحده الطريق التاريخي الذي دخلت به الصيغة العربية «طماطم». سنبحث عن أصل الصيغة العربية بصورة مستقلة.",
     source:"Encyclopaedia Britannica — Tomato",
     url:"https://www.britannica.com/plant/tomato",
-    sourceNote:"مرجع موسوعي موثوق لتاريخ النبات واسم tomato."
+    sourceNote:"مرجع موسوعي لتاريخ النبات واسم tomato."
+  },
+  {
+    title:"الجبر · Algebra", language:"العربية واللاتينية والإنجليزية", tags:["مصطلح علمي","اقتراض من العربية"],
+    aliases:["الجبر","جبر","algebra","al-jabr","aljabr","الجبر والمقابلة"],
+    summary:"دخلت كلمة algebra إلى الإنجليزية عبر اللاتينية الوسيطة، من العربية «الجبر»، الواردة في عنوان كتاب الخوارزمي «المختصر في حساب الجبر والمقابلة».",
+    path:"الجَبْر (عربية) ← algebra (لاتينية وسيطة) ← algebra (إنجليزية)",
+    detail:"يرتبط «الجبر» في هذا المصطلح بفكرة إعادة ما نقص أو إصلاحه، وهو أحد مفهومي الجبر والمقابلة في معالجة المعادلات عند الخوارزمي. هذا مدخل عن تاريخ المصطلح لا عن تاريخ الرياضيات كله.",
+    source:"Online Etymology Dictionary — algebra",
+    url:"https://www.etymonline.com/word/algebra",
+    sourceNote:"مرجع اشتقاقي يذكر أصل المصطلح وعلاقته بعنوان كتاب الخوارزمي."
+  },
+  {
+    title:"خوارزمية · Algorithm", language:"العربية واللاتينية والفرنسية والإنجليزية", tags:["اسم عَلَم","تطور المعنى"],
+    aliases:["خوارزمية","الخوارزمي","algorithm","algorithme","algorism","algorismus"],
+    summary:"ترتبط الكلمة باسم العالم محمد بن موسى الخوارزمي. انتقلت صورته المحرّفة في اللاتينية algorismus، ثم تطورت عبر الفرنسية القديمة إلى algorithm.",
+    path:"al-Khwārizmī (الخوارزمي) ← algorismus (لاتينية وسيطة) ← algorisme (فرنسية قديمة) ← algorithm",
+    detail:"لم تكن الكلمة في بدايتها تعني بالضرورة خوارزمية الحاسوب الحديثة؛ ارتبطت أولًا بالحساب والأرقام وطرائق الحساب، ثم اتسع معناها إلى إجراء منظم لحل مسألة.",
+    source:"Online Etymology Dictionary — algorithm",
+    url:"https://www.etymonline.com/word/algorithm",
+    sourceNote:"مرجع اشتقاقي يشرح التحول من اسم الخوارزمي إلى المصطلح الحديث."
+  },
+  {
+    title:"الكحول · Alcohol", language:"العربية واللاتينية والإنجليزية", tags:["اقتراض من العربية","تطور دلالي"],
+    aliases:["الكحول","كحول","الكحل","alcohol","al-kuhl","al-kuḥl","kohl"],
+    summary:"ترجع كلمة alcohol إلى العربية «الكُحْل». بدأت في الاستعمال الأوروبي للدلالة على مسحوق ناعم، خصوصًا مسحوق الإثمد المستخدم لتكحيل العين، ثم اتسع معناها تدريجيًا.",
+    path:"الكُحْل (عربية) ← alcohol (لاتينية وسيطة: مسحوق ناعم) ← alcohol (إنجليزية: مادة روحية/كحول)",
+    detail:"هذا مثال واضح على تغير المعنى: من مسحوق دقيق إلى «جوهر» أو خلاصة، ثم إلى روح الخمر، وبعد ذلك إلى المادة المسكرة بالمعنى الشائع. لا يعني ذلك أن المعنى الحديث كان هو المعنى العربي الأول.",
+    source:"Online Etymology Dictionary — alcohol",
+    url:"https://www.etymonline.com/word/alcohol",
+    sourceNote:"مرجع اشتقاقي يشرح أصل الكلمة وتطور معناها عبر القرون."
+  },
+  {
+    title:"قهوة · Coffee", language:"العربية والتركية والهولندية والإنجليزية", tags:["اقتراض لغوي","مسار أوروبي"],
+    aliases:["قهوة","القهوة","coffee","kahve","kahveh","koffie","café","caffe","qahwa","قهوه"],
+    summary:"تذكر مراجع اشتقاق الإنجليزية أن coffee وصلت عبر الهولندية koffie، من التركية العثمانية kahveh، المأخوذة من العربية قهوة qahwah.",
+    path:"قَهْوَة (عربية) ← kahveh (تركية عثمانية) ← koffie (هولندية) ← coffee (إنجليزية)",
+    detail:"المسار الأوروبي للكلمة أوضح من أصل اللفظ العربي الأبعد. توجد فرضية تربط «قهوة» بمنطقة كَفّا في إثيوبيا، لكنها ليست محسومة؛ لذلك لا نعرضها كحقيقة مؤكدة.",
+    source:"Online Etymology Dictionary — coffee",
+    url:"https://www.etymonline.com/word/coffee",
+    sourceNote:"مرجع اشتقاقي يذكر سلسلة الانتقال ويعرض التحفظ حول فرضية Kaffa."
+  },
+  {
+    title:"قطن · Cotton", language:"العربية والفرنسية والإنجليزية", tags:["اقتراض من العربية","تنبيه حول الأصل الأبعد"],
+    aliases:["قطن","قُطن","cotton","coton","qutn","qutun","algodon","algodón"],
+    summary:"تذكر مراجع الفرنسية والإنجليزية أن coton/cotton وصلتا عبر لغات أوروبية وسيطة، ويرجع اللفظ في النهاية إلى العربية «قُطْن».",
+    path:"قُطْن (عربية) ← coton (فرنسية قديمة) ← cotton (إنجليزية)",
+    detail:"تؤكد الأكاديمية الفرنسية أن coton مأخوذة من العربية qutun. أما الأصل الأبعد للكلمة العربية نفسها فليس محسومًا؛ لذلك لا ننسبها إلى لغة أقدم دون دليل مستقل.",
+    source:"Dictionnaire de l’Académie française — coton",
+    url:"https://www.dictionnaire-academie.fr/article/A9C4466",
+    sourceNote:"الأكاديمية الفرنسية تذكر صراحة أن الكلمة اقتراض من العربية qutun."
+  },
+  {
+    title:"صفر · Zero", language:"السنسكريتية والعربية واللاتينية والإيطالية والفرنسية والإنجليزية", tags:["ترجمة دلالية","تاريخ الرياضيات"],
+    aliases:["صفر","الصفر","zero","zéro","sifr","ṣifr","sunya","śūnya","cipher"],
+    summary:"تذكر المراجع أن العربية «صِفْر» استُخدمت لترجمة السنسكريتية śūnya بمعنى الخالي أو الفارغ، ثم انتقلت الصيغة إلى اللاتينية الوسيطة ومنها إلى الإيطالية والفرنسية والإنجليزية.",
+    path:"śūnya (سنسكريتية: خالٍ) → ṣifr (عربية: صفر) → zephirum (لاتينية وسيطة) → zero (إيطالية) → zéro (فرنسية) → zero (إنجليزية)",
+    detail:"القصة هنا ليست مجرد انتقال صوتي؛ فالمسار يتضمن ترجمة معنى «الخلو/الفراغ» إلى «صفر». ويجب التمييز بين تاريخ الرمز الرياضي وتاريخ اسم العدد في اللغات المختلفة.",
+    source:"Online Etymology Dictionary — zero",
+    url:"https://www.etymonline.com/word/zero",
+    sourceNote:"مرجع اشتقاقي يذكر الأصل السنسكريتي والترجمة العربية ومسار اللفظ الأوروبي."
   }
-];
+  ,
+  {
+    title:"النرجس · Narcissus", language:"العربية واليونانية والإنجليزية", tags:["نبات وأساطير","تاريخ المصطلح النفسي"],
+    aliases:["النرجس","نرجس","نرسيس","ناركيسوس","narcissus","narkissos","narcissism","narcissist","narcissistic","نرجسية","نرجسي"],
+    summary:"اسم «النرجس» في العربية يقابل اسم جنس نباتي معروف بالإنجليزية باسم narcissus. ترجع الصيغة الأوروبية إلى اللاتينية narcissus، المأخوذة من اليونانية narkissos. وقد ربط بعض الباحثين الاسم اليوناني بـ narkē، أي الخَدَر أو التنميل، لكن هذا الاشتقاق غير محسوم، ويرى باحثون أن أصل الكلمة قد يكون أقدم من اليونانية.",
+    path:"narkissos (يونانية قديمة: اسم النبات) ← narcissus (لاتينية) ← narcissus (إنجليزية) · وفي العربية: النرجس",
+    detail:"تروي الأسطورة اليونانية أن نرسيس (Narcissus)، الشاب شديد الجمال، صدّ الحورية إيكو، ثم افتتن بانعكاس صورته في الماء حتى هلك، فتحول إلى زهرة تحمل اسمه في الرواية الأسطورية. لكن لا يصح الجزم بأن الأسطورة هي التي أنشأت اسم الزهرة: فهناك شواهد قديمة تشير إلى أن اسم النبات كان معروفًا قبل أقدم الروايات الباقية عن نرسيس. ومن المهم أيضًا أن بعض تفاصيل القصة تختلف بين أوفيد وباوسانياس وغيرهما.",
+    source:"Etymonline — narcissus; Oxford Classical Dictionary — Narcissus; Pausanias, Description of Greece 9.31",
+    url:"https://www.etymonline.com/word/narcissus",
+    sourceNote:"أصل اسم النبات غير محسوم. للمقارنة بين تاريخ الاسم والأسطورة: Oxford Classical Dictionary، وللرواية القديمة البديلة: باوسانياس."
+  },
+  {
+    title:"النرجسية · Narcissism", language:"اليونانية القديمة والإنجليزية الحديثة", tags:["تاريخ علم النفس","مصطلح مشتق من الأسطورة"],
+    aliases:["النرجسية","نرجسية","نرجسي","narcissism","narcissist","narcissistic personality","حب الذات","Narcissus complex"],
+    summary:"اشتُق المصطلح الحديث Narcissism من اسم الشخصية الأسطورية Narcissus، الذي صار رمزًا للانشغال بالذات والافتتان بالصورة الشخصية. لذلك يوصف الشخص في الاستعمال العام بأنه narcissist عندما يظهر إعجابًا مفرطًا بنفسه أو تمركزًا حول ذاته.",
+    path:"Narcissus (نرسيس، الشخصية الأسطورية) ← Narcissism (مصطلح حديث لحب الذات/الانشغال بها) ← Narcissist (الشخص ذو السمات النرجسية)",
+    detail:"لماذا سُمّي الإنسان نرجسيًا؟ لأن صورة نرسيس وهو مفتون بانعكاسه أصبحت استعارة ثقافية للشخص الذي يجعل ذاته محور اهتمامه ويطلب الإعجاب. لكن الاستعمال اليومي لكلمة «نرجسي» لا يساوي تشخيص اضطراب الشخصية النرجسية؛ فالتشخيص السريري له معايير محددة ولا يُستنتج من موقف واحد أو من حب الشخص لنفسه.",
+    source:"Kenneth N. Levy et al. — A Historical Review of Narcissism and Narcissistic Personality; Oxford Classical Dictionary — Narcissus",
+    url:"https://levylab.la.psu.edu/wp-content/uploads/sites/9/2022/01/Ahistoricalreviewofnarcissismandnarcissisticpersonality.pdf",
+    sourceNote:"مراجعة أكاديمية لتاريخ مفهوم النرجسية وانتقاله من الأسطورة إلى علم النفس؛ لا تستخدم هذه الصفحة للتشخيص."
+  }
 
+];
 function normalize(value){
   return value.toLocaleLowerCase()
     .normalize("NFD")
@@ -141,7 +219,7 @@ function render(list, query){
   count.textContent=list.length+" نتيجة";
   if(!list.length){
     area.innerHTML='<div class="empty">لم نعثر على هذه الكلمة في المداخل الحالية.<br>جرّب كلمة أخرى، أو أرسل اقتراحك لنضيفه بعد التحقق من مصادره.</div>';
-    message.textContent="لا توجد نتيجة مطابقة في قاعدة البيانات الأولية.";
+    message.textContent="لا توجد نتيجة مطابقة في قاعدة البيانات الحالية.";
     return;
   }
   message.textContent=query ? "وجدنا "+list.length+" نتيجة مطابقة لبحثك." : "هذه المداخل الأولية المتاحة حاليًا.";
