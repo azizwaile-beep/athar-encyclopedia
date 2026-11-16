@@ -4,59 +4,178 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f6f3eb">
+<meta name="description" content="أثَر: موسوعة أصول الكلمات ورحلتها بين اللغات.">
 <title>أثَر | لكل كلمة حكاية</title>
 <style>
-:root{--ink:#172b45;--blue:#244f78;--muted:#65758a;--paper:#f6f3eb;--white:#fff;--line:#e5e0d5;--gold:#b58a48}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.8}
-header{padding:18px 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#fbfaf6}
-.brand{font-size:27px;font-weight:800;color:var(--blue);letter-spacing:1px}.brand small{display:block;font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:500}
-nav a{color:var(--muted);text-decoration:none;margin:0 10px;font-size:14px}
-main{max-width:1080px;margin:auto;padding:55px 22px}
-.hero{text-align:center;padding:42px 15px 55px}.eyebrow{color:var(--gold);font-size:13px;letter-spacing:1px}
-h1{font-size:clamp(32px,6vw,54px);line-height:1.35;margin:12px 0;color:var(--ink)}
-.hero p{color:var(--muted);max-width:650px;margin:0 auto 26px}
-.search{max-width:680px;margin:auto;display:flex;background:white;border:1px solid var(--line);border-radius:14px;padding:7px;box-shadow:0 8px 25px #172b450d}
-.search input{flex:1;min-width:0;border:0;outline:0;padding:12px 14px;font:inherit;background:transparent}
-.search button{border:0;border-radius:10px;background:var(--blue);color:white;padding:10px 22px;font:inherit;cursor:pointer}
+:root{--ink:#172b45;--blue:#244f78;--muted:#65758a;--paper:#f6f3eb;--white:#fff;--line:#e5e0d5;--gold:#b58a48;--green:#39745b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.85}
+header{padding:16px 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#fbfaf6;position:sticky;top:0;z-index:5}
+.brand{font-size:27px;font-weight:800;color:var(--blue);letter-spacing:1px}
+.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--gold);font-weight:500}
+nav a{color:var(--muted);text-decoration:none;margin:0 10px;font-size:13px}
+main{max-width:1080px;margin:auto;padding:36px 20px 55px}
+.hero{text-align:center;padding:35px 12px 42px}
+.eyebrow{color:var(--gold);font-size:13px}
+h1{font-size:clamp(32px,6vw,52px);line-height:1.35;margin:10px 0;color:var(--ink)}
+.hero p{color:var(--muted);max-width:680px;margin:0 auto 22px}
+.search{max-width:700px;margin:auto;display:flex;gap:7px;background:white;border:1px solid var(--line);border-radius:14px;padding:7px;box-shadow:0 8px 25px #172b450d}
+.search input{flex:1;min-width:0;border:0;outline:0;padding:11px 13px;font:inherit;background:transparent}
+.search button{border:0;border-radius:10px;background:var(--blue);color:white;padding:9px 22px;font:inherit;cursor:pointer}
+.search button:hover{background:#183a5c}
 .note{font-size:12px;color:var(--muted);margin-top:10px}
-.section-title{display:flex;align-items:end;justify-content:space-between;margin:24px 0 15px}.section-title h2{margin:0;font-size:23px}.section-title span{font-size:12px;color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
-.card{background:var(--white);border:1px solid var(--line);border-radius:15px;padding:20px;min-height:155px}
-.word{font-size:25px;font-weight:700;color:var(--blue)}.lang{font-size:11px;color:var(--gold);margin-right:8px}
-.card p{font-size:13px;color:var(--muted);margin:8px 0 0}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px;margin-top:34px}
-.feature{padding:20px 4px;border-top:2px solid var(--gold)}.feature h3{margin:0 0 6px;font-size:17px}.feature p{margin:0;color:var(--muted);font-size:13px}
-footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:var(--muted);font-size:12px}
-@media(max-width:600px){header{padding:14px 5%;}nav{display:none}main{padding:28px 16px}.hero{padding:25px 4px 40px}.search button{padding:8px 13px}}
+.section-title{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:25px 0 14px}
+.section-title h2{margin:0;font-size:22px}
+.section-title span{font-size:12px;color:var(--muted)}
+.results{display:grid;gap:14px}
+.result{background:var(--white);border:1px solid var(--line);border-radius:15px;padding:19px}
+.result-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.word{font-size:25px;font-weight:800;color:var(--blue)}
+.lang{font-size:11px;color:var(--gold);margin-right:7px;font-weight:600}
+.pill{display:inline-block;background:#f2eee4;color:#806438;border-radius:30px;padding:3px 10px;font-size:11px}
+.result p{margin:9px 0;color:#46576b}
+.path{background:#f7f8fa;border:1px solid #e8edf2;border-radius:10px;padding:10px 12px;margin:12px 0;color:#244f78;font-size:14px;direction:ltr;text-align:center;overflow-wrap:anywhere}
+.meta{font-size:12px;color:var(--muted)}
+.source{display:inline-block;color:var(--blue);font-size:12px;margin-top:8px;text-decoration:none;border-bottom:1px solid #b8c8d8}
+.source:hover{color:#102e4c}
+.empty{background:#fff;border:1px dashed #cfc8b9;border-radius:14px;padding:22px;text-align:center;color:var(--muted)}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:34px}
+.feature{padding:17px 4px;border-top:2px solid var(--gold)}
+.feature h3{margin:0 0 5px;font-size:16px}
+.feature p{margin:0;color:var(--muted);font-size:12px}
+footer{text-align:center;border-top:1px solid var(--line);padding:20px;color:var(--muted);font-size:12px}
+@media(max-width:600px){header{padding:12px 5%}nav{display:none}main{padding:22px 14px}.hero{padding:20px 3px 30px}.search button{padding:8px 13px}.section-title{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
-<header><div class="brand">أثَر<small>ATHAR · WORD ORIGINS</small></div><nav><a href="#search">ابحث عن كلمة</a><a href="#words">كلمات مختارة</a><a href="#about">عن الموسوعة</a></nav></header>
+<header>
+  <div class="brand">أثَر<small>ATHAR · WORD ORIGINS</small></div>
+  <nav><a href="#search">ابحث عن كلمة</a><a href="#words">مداخل الموسوعة</a><a href="#about">عن أثَر</a></nav>
+</header>
 <main>
 <section class="hero" id="search">
-<div class="eyebrow">موسوعة أصول الكلمات ورحلتها بين اللغات</div>
-<h1>وراء كل كلمة حكاية</h1>
-<p>اكتشف أصل الكلمات، وجذورها، وتحول معانيها عبر الزمن. رحلة لغوية تبحث في الروايات وتعود إلى المصادر.</p>
-<div class="search"><input id="query" type="search" placeholder="اكتب كلمة تريد اكتشاف أصلها..." aria-label="ابحث عن كلمة"><button onclick="searchWord()">اكتشف</button></div>
-<div class="note" id="message">اكتب كلمة للبدء — البحث في هذه النسخة تجريبي.</div>
+  <div class="eyebrow">موسوعة أصول الكلمات ورحلتها بين اللغات</div>
+  <h1>وراء كل كلمة حكاية</h1>
+  <p>ابحث عن كلمة بالعربية أو الإنجليزية أو الفرنسية أو الروسية، واكتشف ما تقوله المراجع عن أصلها ورحلتها.</p>
+  <form class="search" id="searchForm">
+    <input id="query" type="search" placeholder="مثال: سكر، كتاب، sugar، قنديل..." aria-label="ابحث عن كلمة" autocomplete="off">
+    <button type="submit">اكتشف</button>
+  </form>
+  <div class="note" id="message" aria-live="polite">جرّب البحث عن: كتاب · سكر · قنديل · طماطم</div>
 </section>
-<section id="words"><div class="section-title"><h2>نافذة على الكلمات</h2><span>نماذج تعريفية تجريبية</span></div>
-<div class="cards">
-<article class="card"><div class="word">طماطم <span class="lang">العربية</span></div><p>كلمة ذات رحلة لغوية طويلة ارتبطت بأسماء متعددة في لغات العالم.</p></article>
-<article class="card"><div class="word">سكر <span class="lang">العربية</span></div><p>لفظة انتقلت بين لغات وثقافات، وتكشف حكايتها أثر التجارة والتبادل.</p></article>
-<article class="card"><div class="word">كتاب <span class="lang">العربية</span></div><p>من الجذر ك ت ب، وترتبط دلالتها بالكتابة والجمع والتدوين.</p></article>
-<article class="card"><div class="word">قنديل <span class="lang">العربية</span></div><p>مثال على الكلمات التي تستحق تتبع أشكالها واستعمالاتها عبر العصور.</p></article>
-</div></section>
+
+<section id="words">
+  <div class="section-title"><h2>نتائج البحث</h2><span id="count">4 مداخل أولية</span></div>
+  <div class="results" id="results"></div>
+</section>
+
 <section class="features" id="about">
-<div class="feature"><h3>أصل الكلمة</h3><p>تتبّع الجذور والاشتقاقات واللغات التي ظهرت فيها الكلمة.</p></div>
-<div class="feature"><h3>رحلة عبر الزمن</h3><p>راقب تغير اللفظ والمعنى وانتقال الكلمات بين المجتمعات.</p></div>
-<div class="feature"><h3>حقيقة أم شائعة؟</h3><p>ميّز بين الروايات الشائعة وما تسنده الأدلة والمراجع.</p></div>
-<div class="feature"><h3>المصادر والمراجع</h3><p>اجعل التوثيق أساس كل حكاية لغوية تُنشر في الموسوعة.</p></div>
+  <div class="feature"><h3>أصل الكلمة</h3><p>نميّز بين الجذر والاقتراض اللغوي، ولا ننسب أصلًا بلا دليل.</p></div>
+  <div class="feature"><h3>رحلة عبر الزمن</h3><p>نتتبع انتقال اللفظ وتحوّل معناه بين اللغات.</p></div>
+  <div class="feature"><h3>حقيقة أم شائعة؟</h3><p>نفصل بين المعلومة المسندة والرواية التي تحتاج إلى تحقق.</p></div>
+  <div class="feature"><h3>المصادر والمراجع</h3><p>كل مدخل أولي يذكر مرجعًا يمكن للقارئ الرجوع إليه.</p></div>
 </section>
 </main>
 <footer>أثَر — لكل كلمة حكاية، ولكل حكاية أثر.</footer>
+
 <script>
-function searchWord(){const q=document.getElementById('query').value.trim();const m=document.getElementById('message');m.textContent=q?`بحثك عن «${q}» سيتاح عند ربط الموسوعة بقاعدة بيانات موثقة.`:'اكتب كلمة أولاً.'}
-document.getElementById('query').addEventListener('keydown',e=>{if(e.key==='Enter')searchWord()});
+const entries = [
+  {
+    title:"كتاب", language:"العربية", tags:["جذر عربي","اشتقاق"],
+    aliases:["كتاب","الكتاب","كتب","كتابة","كاتب","مكتوب","مكتبة","ك ت ب","kitab","kitaab","kitāb"],
+    summary:"كلمة عربية مشتقة من الجذر الثلاثي ك ت ب. يدور هذا الجذر حول الكتابة والجمع والتدوين، ومنه: كَتَبَ، كتابة، كاتب، مكتوب ومكتبة.",
+    path:"ك ت ب ← كَتَبَ ← كِتاب",
+    detail:"هذا المدخل يشرح الاشتقاق داخل العربية، ولا يدّعي أن كلمة «كتاب» انتقلت من لغة أجنبية. ينبغي الرجوع إلى المعاجم العربية لتوثيق كل استعمال تاريخي على حدة.",
+    source:"Lane’s Arabic-English Lexicon — معجم عربي إنجليزي",
+    url:"https://lanelexicon.com/wp-content/uploads/2019/03/an_arabic_english_lexicon_part_1.pdf",
+    sourceNote:"مرجع معجمي تراثي؛ يلزم تحديد موضع مادة (كتب) عند توسيع التوثيق."
+  },
+  {
+    title:"سكر · Sugar", language:"العربية والإنجليزية", tags:["اقتراض لغوي","رحلة بين اللغات"],
+    aliases:["سكر","السُّكّر","sugar","sucre","azucar","azúcar","zucker","sakhar","shakar","sharkara","śarkarā","سكر"],
+    summary:"تذكر مراجع اشتقاق الإنجليزية أن sugar وصلت إلى الإنجليزية عبر الفرنسية القديمة، من اللاتينية الوسيطة، ثم العربية سُكّر، والفارسية شَكَر، وصولًا إلى السنسكريتية śarkarā.",
+    path:"śarkarā (سنسكريتية) ← shakar (فارسية) ← sukkar (عربية) ← succarum (لاتينية وسيطة) ← sucre (فرنسية قديمة) ← sugar",
+    detail:"هذا المسار يشرح تاريخ اللفظة الإنجليزية كما يورده المرجع. لا ينبغي اختزاله في القول إن كل صيغ الكلمة في اللغات الحديثة انتقلت بالطريق نفسه.",
+    source:"Online Etymology Dictionary — sugar",
+    url:"https://www.etymonline.com/word/sugar",
+    sourceNote:"مرجع اشتقاقي للكلمة الإنجليزية؛ يعرض سلسلة الاقتراض المذكورة."
+  },
+  {
+    title:"قنديل", language:"العربية", tags:["اقتراض لغوي محتمل","السريانية واليونانية"],
+    aliases:["قنديل","قناديل","qandil","qandēlā","kandēlē","kandela","قندلة"],
+    summary:"تورد بعض المراجع الاشتقاقية أن العربية «قنديل» دخلت عبر السريانية qandēlā، المرتبطة باليونانية القديمة kandḗlē، بمعنى المصباح أو أداة الإضاءة.",
+    path:"κανδήλη (يونانية قديمة) ← qandēlā (سريانية) ← قنديل (عربية)",
+    detail:"نضع هذا المسار بصيغة منسوبة إلى المرجع، لا كحقيقة نهائية مغلقة. عند تطوير الموسوعة سنبحث عن شواهد معجمية تاريخية مستقلة قبل اعتماد الحكم النهائي.",
+    source:"Wiktionary — قنديل (مدخل اشتقاقي)",
+    url:"https://en.wiktionary.org/wiki/قنديل",
+    sourceNote:"مصدر استكشافي ثانوي؛ يحتاج إلى تدعيم بمعجم تاريخي متخصص."
+  },
+  {
+    title:"Tomato · طماطم", language:"الناواتل والإسبانية والإنجليزية", tags:["تاريخ الاسم","تنبيه اشتقاقي"],
+    aliases:["طماطم","طماطم","tomato","tomate","tomatl","jitomate","tomatoes"],
+    summary:"تذكر Encyclopaedia Britannica أن الاسم الإنجليزي tomato مشتق من كلمة tomatl في لغة الناواتل، وأن الإسبان نقلوا النبات إلى أوروبا في القرن السادس عشر.",
+    path:"tomatl (ناواتل) ← tomate (إسبانية) ← tomato (إنجليزية)",
+    detail:"تنبيه مهم: هذا يثبت مسار الاسم الإنجليزي كما تذكره الموسوعة، ولا يثبت وحده الطريق التاريخي الذي دخلت به الصيغة العربية «طماطم». سنبحث عن أصل الصيغة العربية بصورة مستقلة.",
+    source:"Encyclopaedia Britannica — Tomato",
+    url:"https://www.britannica.com/plant/tomato",
+    sourceNote:"مرجع موسوعي موثوق لتاريخ النبات واسم tomato."
+  }
+];
+
+function normalize(value){
+  return value.toLocaleLowerCase()
+    .normalize("NFD")
+    .replace(/[\u064B-\u065F\u0670\u0640]/g,"")
+    .replace(/[أإآٱ]/g,"ا")
+    .replace(/ى/g,"ي")
+    .replace(/ؤ/g,"و")
+    .replace(/ئ/g,"ي")
+    .replace(/[’'`]/g,"")
+    .trim();
+}
+function render(list, query){
+  const area=document.getElementById("results");
+  const message=document.getElementById("message");
+  const count=document.getElementById("count");
+  area.innerHTML="";
+  count.textContent=list.length+" نتيجة";
+  if(!list.length){
+    area.innerHTML='<div class="empty">لم نعثر على هذه الكلمة في المداخل الحالية.<br>جرّب كلمة أخرى، أو أرسل اقتراحك لنضيفه بعد التحقق من مصادره.</div>';
+    message.textContent="لا توجد نتيجة مطابقة في قاعدة البيانات الأولية.";
+    return;
+  }
+  message.textContent=query ? "وجدنا "+list.length+" نتيجة مطابقة لبحثك." : "هذه المداخل الأولية المتاحة حاليًا.";
+  list.forEach(item=>{
+    const article=document.createElement("article");
+    article.className="result";
+    const top=document.createElement("div"); top.className="result-top";
+    const heading=document.createElement("div");
+    const title=document.createElement("div"); title.className="word"; title.textContent=item.title;
+    const lang=document.createElement("span"); lang.className="lang"; lang.textContent=item.language;
+    heading.append(title,lang);
+    const tags=document.createElement("div");
+    item.tags.forEach(t=>{const s=document.createElement("span");s.className="pill";s.textContent=t;tags.appendChild(s);});
+    top.append(heading,tags);
+    const summary=document.createElement("p");summary.textContent=item.summary;
+    const path=document.createElement("div");path.className="path";path.textContent=item.path;
+    const detail=document.createElement("p");detail.textContent=item.detail;
+    const meta=document.createElement("div");meta.className="meta";meta.textContent=item.sourceNote;
+    const link=document.createElement("a");link.className="source";link.href=item.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="المصدر: "+item.source+" ↗";
+    article.append(top,summary,path,detail,meta,link);
+    area.appendChild(article);
+  });
+}
+function searchWord(){
+  const q=normalize(document.getElementById("query").value);
+  if(!q){render(entries,"");return;}
+  const found=entries.filter(item=>{
+    const fields=[item.title,item.language,item.summary,item.path,...item.aliases,...item.tags].map(normalize);
+    return fields.some(field=>field.includes(q)||q.includes(field));
+  });
+  render(found,q);
+}
+document.getElementById("searchForm").addEventListener("submit",function(e){e.preventDefault();searchWord();});
+render(entries,"");
 </script>
-</body></html>
+</body>
+</html>
